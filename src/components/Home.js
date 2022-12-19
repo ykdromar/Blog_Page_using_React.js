@@ -27,21 +27,28 @@ function Home() {
 
   return (
     <div id="home">
-      <h2>MY BLOGS</h2>
+      <h2>My Blogs</h2>
       {posts.map((post, index) => {
         return (
           <div className="post-item" key={`post-${index}`}>
-            <div style={{ fontWeight: "700", fontSize: "15px" }}>
-              {post.title}
-            </div>
-            <div>
-              {post.content.substr(0, 500)}
-              <Link
-                className="nav-item-link"
-                to={`/Blog_Page_using_React.js/post/${post.id}`}
+            <div style={{ margin: "15px" }}>
+              <div
+                style={{
+                  fontWeight: "700",
+                  fontSize: "18px",
+                }}
               >
-                &nbsp;Read More...
-              </Link>
+                {post.title}
+              </div>
+              <div>
+                {post.content.substr(0, 500)}
+                <Link
+                  className="nav-item-link"
+                  to={`/Blog_Page_using_React.js/post/${post.id}`}
+                >
+                  &nbsp;Read More...
+                </Link>
+              </div>
             </div>
           </div>
         );

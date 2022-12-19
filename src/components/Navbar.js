@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <div id="navbar">
       <ul id="nav-items-list">
-        <li>
+        {/* <li>
           <Link className="nav-item-link" to="/Blog_Page_using_React.js/">
             Home
           </Link>
@@ -15,6 +15,11 @@ function Navbar() {
             to="/Blog_Page_using_React.js/create-post"
           >
             CreatePost
+          </Link>
+        </li> */}
+        <li>
+          <Link className="nav-item-link" to="/Blog_Page_using_React.js/">
+            <h1>Blogs</h1>
           </Link>
         </li>
       </ul>
