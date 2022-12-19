@@ -42,10 +42,7 @@ function Home() {
               </div>
               <div>
                 {post.content.substr(0, 500)}
-                <Link
-                  className="nav-item-link"
-                  to={`/Blog_Page_using_React.js/post/${post.id}`}
-                >
+                <Link className="nav-item-link" to={`/blog/post/${post.id}`}>
                   &nbsp;Read More...
                 </Link>
               </div>

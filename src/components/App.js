@@ -10,17 +10,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route exact path="/Blog_Page_using_React.js/" element={<Home />} />
-        <Route
-          exact
-          path="/Blog_Page_using_React.js/post/:postId"
-          element={<PostDetail />}
-        />
-        <Route
-          exact
-          path="/Blog_Page_using_React.js/create-post"
-          element={<CreatePost />}
-        />
+        <Route exact path="/blog/" element={<Home />} />
+        <Route exact path="/blog/post/:postId" element={<PostDetail />} />
+        <Route exact path="/blog/create-post" element={<CreatePost />} />
       </Routes>
     </div>
   );

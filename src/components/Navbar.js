@@ -5,20 +5,20 @@ function Navbar() {
     <div id="navbar">
       <ul id="nav-items-list">
         {/* <li>
-          <Link className="nav-item-link" to="/Blog_Page_using_React.js/">
+          <Link className="nav-item-link" to="/blog/">
             Home
           </Link>
         </li>
         <li>
           <Link
             className="nav-item-link"
-            to="/Blog_Page_using_React.js/create-post"
+            to="/blog/create-post"
           >
             CreatePost
           </Link>
         </li> */}
         <li>
-          <Link className="nav-item-link" to="/Blog_Page_using_React.js/">
+          <Link className="nav-item-link" to="/blog/">
             <h1>Blogs</h1>
           </Link>
         </li>
