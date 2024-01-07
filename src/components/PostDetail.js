@@ -16,7 +16,7 @@ function PostDetail() {
     <div id="container">
       <div className="post">
         <div className="title">{post.title}</div>
-        <img className="header-img" alt="header-img" src={post.header}></img>
+        {/* <img className="header-img" alt="header-img" src={post.header}></img> */}
         <div className="content">{post.content}</div>
       </div>
     </div>
