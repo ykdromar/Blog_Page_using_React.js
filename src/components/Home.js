@@ -1,57 +1,44 @@
-import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import db from "../firebase";
-import "./home.css";
-import "./navbar.css";
-function Home() {
+import styles from "../css/home.module.css";
+import { getAllDocs } from "../config/firebaseFirestore";
+const Home = () => {
   const [posts, setPosts] = useState([]);
-
+  const fetchAllPosts = async () => {
+    let allPosts = await getAllDocs("blogs");
+    setPosts(allPosts);
+  };
   useEffect(() => {
-    let posts = [];
-    getDocs(collection(db, "/blogs")).then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        // console.log(doc.data());
-        let post = {
-          id: doc.id,
-          title: doc.data().title,
-          content: doc.data().content,
-        };
-        posts.push(post);
-      });
-      setPosts(posts);
-    });
-    // console.log(posts)
+    fetchAllPosts();
   }, []);
-  // console.log(posts);
 
   return (
-    <div id="home">
-      <h2>My Blogs</h2>
-      {posts.map((post, index) => {
-        return (
-          <div className="post-item" key={`post-${index}`}>
-            <div style={{ margin: "15px" }}>
-              <div
-                style={{
-                  fontWeight: "700",
-                  fontSize: "18px",
-                }}
-              >
-                {post.title}
-              </div>
-              <div>
-                {post.content.substr(0, 500)}
-                <Link className="nav-item-link" to={`/blog/post/${post.id}`}>
-                  &nbsp;Read More...
-                </Link>
-              </div>
-            </div>
-          </div>
-        );
-      })}
+    <div className={styles.home}>
+      <main className={styles.allArticles}></main>
+      <aside className={styles.topArticles}></aside>
     </div>
   );
-}
+};
 
 export default Home;
+
+// {posts.map((post) => {
+//   return (
+//     <div className="postItem" key={`post-${post.uid}`}>
+//       <div style={{ margin: "15px" }}>
+//         <div
+//           style={{
+//             fontWeight: "700",
+//             fontSize: "18px",
+//           }}
+//         >
+//           {post.data.title}
+//         </div>
+//         <div>
+//           {post.data.content.substr(0, 500)}
+//           <Link to={`/post/${post.uid}`}>&nbsp;Read More...</Link>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// })}

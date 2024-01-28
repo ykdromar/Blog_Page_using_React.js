@@ -1,21 +1,23 @@
-import { getDoc, doc } from "firebase/firestore";
-import db from "../firebase";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./post.css";
+import styles from "../css/post.module.css";
+import { getSingleDoc } from "../config/firebaseFirestore";
 
 function PostDetail() {
   const [post, setPost] = useState({});
   const { postId } = useParams();
+
+  const getPost = async () => {
+    let rawPost = await getSingleDoc("blogs", postId);
+    setPost(rawPost);
+  };
   useEffect(() => {
-    getDoc(doc(db, "/blogs", postId)).then((snapshot) => {
-      setPost(snapshot.data());
-    });
+    getPost();
   });
   return (
-    <div id="container">
+    <div className="">
       <div className="post">
-        <div className="title">{post.title}</div>
+        <div className={styles.title}>{post.title}</div>
         {/* <img className="header-img" alt="header-img" src={post.header}></img> */}
         <div className="content">{post.content}</div>
       </div>
