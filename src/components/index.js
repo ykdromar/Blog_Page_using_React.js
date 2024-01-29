@@ -4,4 +4,13 @@ import Navbar from "./Navbar";
 import ArticlePage from "./ArticlePage";
 import ArticleBox from "./ArticleBox";
 import GoogleAd from "./GoogleAd";
-export { Home, CreateEditArticle, Navbar, ArticlePage, ArticleBox, GoogleAd };
+import Login from "./Login";
+export {
+  Home,
+  CreateEditArticle,
+  Navbar,
+  ArticlePage,
+  ArticleBox,
+  GoogleAd,
+  Login,
+};

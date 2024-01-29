@@ -1,0 +1,41 @@
+.loginPage {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 20px;
+}
+.loginPage input {
+  width: 250px;
+  height: 30px;
+  margin: 10px;
+  outline: none;
+  border: 0.3px solid black;
+  border-radius: 5px;
+  font-family: "Faustina", serif;
+}
+
+.signBtn {
+  background-color: white;
+  color: black;
+  box-sizing: border-box;
+  padding: 8px;
+  margin: 10px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.signBtn:hover {
+  background-color: rgb(78, 78, 78);
+  color: white;
+}
+
+.signBtn:active {
+  transform: translateY(5px);
+}

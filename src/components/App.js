@@ -1,8 +1,12 @@
 import styles from "../css/app.module.css";
-import { Home, CreateEditArticle, ArticlePage, Navbar } from "./index";
-import { Routes, Route } from "react-router-dom";
+import { useAuth } from "../hooks";
+import { Home, CreateEditArticle, ArticlePage, Navbar, Login } from "./index";
+import { Routes, Route, Navigate } from "react-router-dom";
 function App() {
-  return (
+  const auth = useAuth();
+  return auth.loading ? (
+    <></>
+  ) : (
     <div className={styles.app}>
       <Navbar />
       <Routes>
@@ -11,9 +15,19 @@ function App() {
         <Route
           exact
           path="/edit-478bv7e/:articleId"
-          element={<CreateEditArticle />}
+          element={
+            auth.user ? <CreateEditArticle /> : <Navigate replace to="/" />
+          }
         />
-        <Route exact path="/create-478bv7d" element={<CreateEditArticle />} />
+        <Route
+          exact
+          path="/create-478bv7d"
+          element={
+            auth.user ? <CreateEditArticle /> : <Navigate replace to="/" />
+          }
+        />
+        <Route exact path="/login-478bv7f" element={<Login />} />
+        <Route exact path="*" element={<h2>Error 404: Page Not Found</h2>} />
       </Routes>
     </div>
   );
