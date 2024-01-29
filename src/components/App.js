@@ -1,5 +1,5 @@
 import styles from "../css/app.module.css";
-import { Home, CreateEditArticle, PostDetail, Navbar } from "./index";
+import { Home, CreateEditArticle, ArticlePage, Navbar } from "./index";
 import { Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/article/:articleId" element={<PostDetail />} />
+        <Route exact path="/article/:articleId" element={<ArticlePage />} />
         <Route
           exact
           path="/edit-478bv7e/:articleId"

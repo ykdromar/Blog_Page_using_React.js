@@ -1,0 +1,32 @@
+.articlePage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.article {
+  width: 65%;
+  min-width: 300px;
+  margin-left: 30px;
+}
+
+.similarArticles {
+  width: 25%;
+  margin-right: 30px;
+}
+
+.articlePara {
+  font-family: "Faustina", serif;
+  font-size: 1.1em;
+  margin: 10px;
+}
+
+.articleHeading {
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  margin: 5px;
+  margin-top: 15px;
+}
