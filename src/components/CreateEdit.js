@@ -17,7 +17,7 @@ const EditArticle = () => {
   const [contents, setContents] = useState([]);
   const fetchArticle = async () => {
     try {
-      let rawContents = await getSingleDoc("blogs", articleId);
+      let rawContents = await getSingleDoc("articles", articleId);
       setContents(rawContents.contents);
     } catch (e) {
       console.log(e);
@@ -63,7 +63,7 @@ const CreateEdit = (props) => {
     try {
       if (articleId !== undefined && articleId !== "") {
         let hashedArticleId = articleId.replaceAll(" ", "-");
-        setData("blogs", hashedArticleId, { contents });
+        setData("articles", hashedArticleId, { contents });
       }
     } catch (e) {}
   };
@@ -71,7 +71,7 @@ const CreateEdit = (props) => {
   const deleteArticle = async () => {
     try {
       if (props.articleId) {
-        await deleteData("blogs", articleId);
+        await deleteData("articles", articleId);
         navigate("/");
       }
     } catch (e) {}

@@ -8,7 +8,7 @@ function PostDetail() {
   const { postId } = useParams();
 
   const getPost = async () => {
-    let rawPost = await getSingleDoc("blogs", postId);
+    let rawPost = await getSingleDoc("articles", postId);
     setPost(rawPost);
   };
   useEffect(() => {

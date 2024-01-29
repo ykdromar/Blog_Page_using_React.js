@@ -1,0 +1,25 @@
+.articleBox {
+  margin: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+  border-bottom: 0.2px solid rgb(207, 207, 207);
+}
+
+.articleTitle {
+  font-family: "Merriweather", serif;
+  font-size: 1.3em;
+  font-weight: 900;
+  color: black;
+  text-decoration: none;
+  margin: 0px;
+}
+
+.articleTitle:hover {
+  text-decoration: underline;
+}
+
+.articleDesc {
+  font-size: 1.1em;
+  margin: 0px;
+  margin-top: 5px;
+}
