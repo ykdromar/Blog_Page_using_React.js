@@ -5,7 +5,7 @@ import { IoMdCloseCircleOutline } from "react-icons/io";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 const CreateEditArticle = () => {
   const location = useLocation();
-  if (location.pathname === "/create-478bv7d") {
+  if (location.pathname === "/create") {
     return <CreateEdit contents={[]} />;
   } else {
     return <EditArticle />;

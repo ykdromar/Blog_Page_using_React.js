@@ -15,4 +15,27 @@
   font-size: 1.5em;
   font-weight: 900;
   font-family: "Merriweather", serif;
+  text-decoration: none;
+  color: black;
+}
+
+.signBtn {
+  background-color: white;
+  color: black;
+  box-sizing: border-box;
+  padding: 8px;
+  margin: 10px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.signBtn:hover {
+  background-color: rgb(78, 78, 78);
+  color: white;
+}
+
+.signBtn:active {
+  transform: translateY(5px);
 }

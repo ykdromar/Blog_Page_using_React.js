@@ -8,6 +8,7 @@
 }
 
 .article {
+  position: relative;
   width: 65%;
   min-width: 300px;
   margin-left: 30px;
@@ -29,4 +30,19 @@
   font-weight: 900;
   margin: 5px;
   margin-top: 15px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  position: absolute;
+  right: 0px;
+  top: 5px;
+}
+
+.editIcon {
+  color: black;
+  text-decoration: none;
 }

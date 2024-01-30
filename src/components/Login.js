@@ -24,16 +24,9 @@ const Login = () => {
       <input type="text" placeholder="Email" onChange={readEmail}></input>
       <input type="password" placeholder="Password" onChange={readPass}></input>
       <div>
-        {auth.user == null && (
-          <button className={styles.signBtn} onClick={login}>
-            Login
-          </button>
-        )}
-        {auth.user && (
-          <button className={styles.signBtn} onClick={auth.logout}>
-            Log out
-          </button>
-        )}
+        <button className={styles.signBtn} onClick={login}>
+          Login
+        </button>
       </div>
     </div>
   );

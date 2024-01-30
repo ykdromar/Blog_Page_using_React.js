@@ -3,11 +3,14 @@ import { useParams } from "react-router-dom";
 import styles from "../css/articlePage.module.css";
 import { getSingleDoc } from "../config/firebaseFirestore";
 import { GoogleAd } from "./";
+import { FaEdit } from "react-icons/fa";
+import { useAuth } from "../hooks";
+import { Link } from "react-router-dom";
 function ArticlePage() {
   const [article, setArticle] = useState({});
   const [loading, setLoading] = useState(true);
   const { articleId } = useParams();
-
+  const auth = useAuth();
   const getArticle = async () => {
     setLoading(true);
     try {
@@ -24,6 +27,13 @@ function ArticlePage() {
   ) : (
     <div className={styles.articlePage}>
       <article className={styles.article}>
+        {auth.user && (
+          <div className={styles.actions}>
+            <Link className={styles.editIcon} to={`/edit/${articleId}`}>
+              <FaEdit size={20} />
+            </Link>
+          </div>
+        )}
         {article.contents.map((content) => {
           switch (content.type) {
             case "paragraph":

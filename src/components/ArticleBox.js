@@ -1,7 +1,9 @@
 import styles from "../css/articleBox.module.css";
 import { Link } from "react-router-dom";
+import { FaEdit } from "react-icons/fa";
+import { useAuth } from "../hooks";
 const ArticleBox = ({ article }) => {
-  console.log(article);
+  const auth = useAuth();
   if (article.data.contents[0] == null) {
     return <></>;
   }
@@ -15,6 +17,13 @@ const ArticleBox = ({ article }) => {
       <p className={styles.articleDesc}>
         {article.data.contents[1] != null ? article.data.contents[1].data : ""}
       </p>
+      <div className={styles.actions}>
+        {auth.user && (
+          <Link className={styles.editIcon} to={`/edit/${article.uid}`}>
+            <FaEdit size={20} />
+          </Link>
+        )}
+      </div>
     </article>
   );
 };

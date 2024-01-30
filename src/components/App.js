@@ -14,20 +14,30 @@ function App() {
         <Route exact path="/article/:articleId" element={<ArticlePage />} />
         <Route
           exact
-          path="/edit-478bv7e/:articleId"
+          path="/edit/:articleId"
           element={
             auth.user ? <CreateEditArticle /> : <Navigate replace to="/" />
           }
         />
         <Route
           exact
-          path="/create-478bv7d"
+          path="/create"
           element={
             auth.user ? <CreateEditArticle /> : <Navigate replace to="/" />
           }
         />
-        <Route exact path="/login-478bv7f" element={<Login />} />
-        <Route exact path="*" element={<h2>Error 404: Page Not Found</h2>} />
+        <Route
+          exact
+          path="/login"
+          element={auth.user ? <Navigate replace to="/" /> : <Login />}
+        />
+        <Route
+          exact
+          path="*"
+          element={
+            <h2 style={{ textAlign: "center" }}>Error 404: Page Not Found</h2>
+          }
+        />
       </Routes>
     </div>
   );
